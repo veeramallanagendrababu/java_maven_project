@@ -3,12 +3,6 @@ name: Java CI with Maven
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
-permissions:
-  contents: read
-  security-events: write
 
 jobs:
   build:
@@ -26,6 +20,3 @@ jobs:
 
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-
-    - name: Update dependency graph
-      uses: advanced-security/maven-dependency-submission-action@v3
